@@ -1,0 +1,32 @@
+version: '3.8'
+
+# The services to compose (each one in a seperate container)
+services:
+
+  # The database
+  mongodb:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data:/data/db
+
+  # The API (backend)
+  backend:
+    build: ./backend
+    container_name: fast-api
+    ports:
+      - '8000:8000'
+    expose:
+      - '8000'
+    links:
+      - mongodb
+
+  # The client (frontend)  
+  frontend:
+    build: ./frontend
+    container_name: react-app
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true

@@ -1,0 +1,32 @@
+.container{
+margin: 50px;
+}
+
+.App {
+  text-align: center;
+}
+
+.hostIP{
+  margin: 20px;
+}
+
+.deletebtn{
+  position: absolute;
+  /* height: 30px; */
+  right: 10px;
+  background: crimson;
+  border-radius: 7px;
+  top: -5px;
+  content: "Delete";
+  font-size: 0.85rem;
+  color: white;
+  padding: 2px 5px 2px 5px;
+  border: 0;
+  transition: transform 250ms cubic-bezier(.3, .7, .4, 2);
+}
+
+.deletebtn:hover{
+transition: filter 250ms, transform 250ms cubic-bezier(.3, .7, .4, 2);
+filter: brightness(110%);
+transform: scale(1.05);
+}
