@@ -9,7 +9,7 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - ./data:/data/db
+      - mongodata:/data/db
 
   # The API (backend)
   backend:
@@ -30,3 +30,6 @@ services:
       - '3000:3000'
     stdin_open: true
     tty: true
+
+volumes:
+  mongodata:
