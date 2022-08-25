@@ -17,19 +17,19 @@ function App() {
   
   // Get all data from db
   const getDBdata = async () =>{
-    let resp = await axios.get('http://0.0.0.0:8000/api/ips')
+    let resp = await axios.get('http://localhost:8000/api/ips')
     setDB_Domains(resp.data)
     }
 
   // Get host's local and public ip
   const getHostIP = async () =>{
-    let resp = await axios.get('http://0.0.0.0:8000/api/host')
+    let resp = await axios.get('http://localhost:8000/api/host')
     setHostIP(resp.data)
     }
   
   //  Create an ip request for the entered domain and store it in the db
   const searchForDomainsIP = async (domain) => {
-    let resp = await axios.post('http://0.0.0.0:8000/api/ips/',{
+    let resp = await axios.post('http://localhost:8000/api/ips/',{
       "domain": domain,
       "internal_ip": ""
     })
@@ -37,7 +37,7 @@ function App() {
   }
 
   const DeleteIP = async (domain) =>{
-    let resp = await axios.delete('http://0.0.0.0:8000/api/ips/'+domain)
+    let resp = await axios.delete('http://localhost:8000/api/ips/'+domain)
     console.log(resp)
     if(resp){
       console.log("now will delete it from the list")
