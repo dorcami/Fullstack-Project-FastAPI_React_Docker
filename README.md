@@ -19,3 +19,5 @@ The project is packed in a Docker image for deployment using Docker.
 5. Enter localhost:3000 (client address)
 
 Demo screenshot:
+
+<img src="https://github.com/dorcami/Fullstack-Project-FastAPI_React_Docker/blob/main/Fullstack%20Demo.png"></img>
